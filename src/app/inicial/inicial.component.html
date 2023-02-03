@@ -1,0 +1,15 @@
+<div>
+  <h4>
+    Defina aqui o tempo de cada estudo e quantos ciclos necessários.
+  </h4>
+  <input formControlName="tempoEstudo" placeholder="Tempo de cada estudo" type="number">
+  <input formControlName="tempoDescanso" placeholder="Tempo de pausa" type="number">
+  <input formControlName="ciclo" placeholder="Quantidade de ciclos" type="number">
+  <br>
+  <button (click)="iniciar()">Iniciar</button>
+</div>
+<div>
+  <h1>Contagem</h1>
+  <h1>{{contagemEstudo}}</h1>
+  <h2>{{contagemDescanso}}</h2>
+</div>
