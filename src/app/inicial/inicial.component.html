@@ -1,15 +1,48 @@
-<div>
-  <h4>
-    Defina aqui o tempo de cada estudo e quantos ciclos necessários.
-  </h4>
-  <input formControlName="tempoEstudo" placeholder="Tempo de cada estudo" type="number">
-  <input formControlName="tempoDescanso" placeholder="Tempo de pausa" type="number">
-  <input formControlName="ciclo" placeholder="Quantidade de ciclos" type="number">
-  <br>
-  <button (click)="iniciar()">Iniciar</button>
-</div>
-<div>
-  <h1>Contagem</h1>
-  <h1>{{contagemEstudo}}</h1>
-  <h2>{{contagemDescanso}}</h2>
-</div>
+<mat-card>
+    <mat-grid-list cols="1" rowHeight="40:1">
+      <mat-grid-tile>
+        <mat-card-header>
+          <mat-card-title
+            ><h1>
+              Nome do usuario
+            </h1></mat-card-title
+          ></mat-card-header
+        >
+      </mat-grid-tile>
+    </mat-grid-list>
+</mat-card>
+<mat-divider></mat-divider>
+<mat-card>
+  <mat-grid-list cols="1" rowHeight="30:1">
+    <mat-grid-tile>
+      <mat-card-header>
+        <mat-card-title>
+          <h1>Nome do pet</h1>
+        </mat-card-title>
+      </mat-card-header>
+    </mat-grid-tile>
+  </mat-grid-list>
+  <mat-divider></mat-divider>
+  <mat-grid-list cols="1" rowHeight="30:1">
+    <mat-grid-tile>
+      <mat-card-header>
+        <mat-card-title>
+          <h2>raça do pet</h2>
+        </mat-card-title>
+      </mat-card-header>
+    </mat-grid-tile>
+  </mat-grid-list>
+  <mat-grid-list cols="1" rowHeight="5:1">
+    <mat-grid-tile>
+      <h1>Imagem do pet</h1>
+    </mat-grid-tile>
+  </mat-grid-list>
+  <mat-divider></mat-divider>
+  <mat-grid-list cols="1" rowHeight="26:1">
+    <mat-grid-tile>
+      <button mat-raised-button color="primary" (click)="entrar()">
+        Entrar
+      </button>
+    </mat-grid-tile>
+  </mat-grid-list>
+</mat-card>

@@ -1,1 +1,100 @@
-<p>tecnica works!</p>
+<mat-card>
+  <form [formGroup]="tempos" (ngSubimit)="iniciar()">
+    <mat-grid-list cols="1" rowHeight="30:1">
+      <mat-grid-tile>
+        <mat-card-header>
+          <mat-card-title
+            ><h1>
+              Defina aqui o tempo de cada estudo e cada pausa correspondente.
+            </h1></mat-card-title
+          ></mat-card-header
+        >
+      </mat-grid-tile>
+    </mat-grid-list>
+    <mat-grid-list cols="2" rowHeight="14:1">
+      <mat-grid-tile>
+        <mat-card-subtitle>Defina aqui o tempo de estudo</mat-card-subtitle>
+      </mat-grid-tile>
+      <mat-grid-tile>
+        <mat-card-subtitle>
+          Defina aqui o tempo de cada descanso/pausa</mat-card-subtitle
+        >
+      </mat-grid-tile>
+      <mat-grid-tile>
+        <mat-form-field appearance="fill">
+          <mat-label>Minutos</mat-label>
+          <input
+            matInput
+            formControlName="tempoEstudo"
+            type="number"
+            max="30"
+            min="1"
+          />
+        </mat-form-field>
+      </mat-grid-tile>
+      <mat-grid-tile>
+        <mat-form-field appearance="fill">
+          <mat-label>Minutos</mat-label>
+          <input
+            matInput
+            formControlName="tempoDescanso"
+            type="number"
+            max="30"
+            min="1"
+          />
+        </mat-form-field>
+      </mat-grid-tile>
+      <mat-divider></mat-divider>
+    </mat-grid-list>
+    <mat-divider></mat-divider>
+    <mat-grid-list cols="1" rowHeight="26:1">
+      <mat-grid-tile>
+        <button mat-raised-button color="primary" (click)="iniciar()">
+          Iniciar
+        </button>
+      </mat-grid-tile>
+    </mat-grid-list>
+  </form>
+</mat-card>
+<mat-divider></mat-divider>
+<mat-card>
+  <mat-grid-list cols="1" rowHeight="30:1">
+    <mat-grid-tile>
+      <mat-card-header>
+        <mat-card-title>
+          <h1>Contagem</h1>
+        </mat-card-title>
+      </mat-card-header>
+    </mat-grid-tile>
+  </mat-grid-list>
+  <mat-divider></mat-divider>
+  <mat-grid-list cols="1" rowHeight="30:1">
+    <mat-grid-tile>
+      <mat-card-header>
+        <mat-card-title>
+          <h2>Tempo de estudo</h2>
+        </mat-card-title>
+      </mat-card-header>
+    </mat-grid-tile>
+  </mat-grid-list>
+  <mat-grid-list cols="1" rowHeight="20:1">
+    <mat-grid-tile>
+      <h1>{{ contagemEstudo }}</h1>
+    </mat-grid-tile>
+  </mat-grid-list>
+  <mat-divider></mat-divider>
+  <mat-grid-list cols="1" rowHeight="30:1">
+    <mat-grid-tile>
+      <mat-card-header>
+        <mat-card-title>
+          <h2>Tempo de pausa</h2>
+        </mat-card-title>
+      </mat-card-header>
+    </mat-grid-tile>
+  </mat-grid-list>
+  <mat-grid-list cols="1" rowHeight="20:1">
+    <mat-grid-tile>
+      <h1>{{ contagemDescanso }}</h1>
+    </mat-grid-tile>
+  </mat-grid-list>
+</mat-card>

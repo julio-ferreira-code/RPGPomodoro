@@ -9,5 +9,5 @@ export const routes: Routes = [
   {path: 'login',component: LoginComponent},
   {path: 'ranking', component: RankingComponent},
   {path: 'tecnica', component: TecnicaComponent},
-  {path:'', redirectTo: '/inicial', pathMatch:'full'}
+  {path:'', redirectTo: '/tecnica', pathMatch:'full'}
 ];
