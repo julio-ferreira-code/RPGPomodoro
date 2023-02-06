@@ -1,1 +1,20 @@
-<p>login works!</p>
+<div class="container" fxLayout="column" fxLayoutGap="10px">
+    <div class="txtLogin">
+      <h3>Login</h3>
+    </div>
+  <form novalidate [formGroup] = "loginForm" (ngSubmit)="validar()">
+    <div class="campoEmail">
+      <img class="imgEmail" matListAvatar src='assets\imagens\emailicon.png'>
+      <input matInput formControlName="email" type="email" placeholder="abc@mail..." autofocus required>
+    </div>
+    <br>
+    <div class="campoSenha">
+      <img class="imgPW" matListAvatar src='assets\imagens\senhaicon.jpg'>
+      <input matInput formControlName="senha" type="password" placeholder="******" required>
+    </div>
+    <br>
+    <div>
+      <button type="submit" class="bntEntrar" mat-raised-button color="primary" [disabled]="!loginForm.valid">Entrar</button>
+    </div>
+  </form>
+</div>

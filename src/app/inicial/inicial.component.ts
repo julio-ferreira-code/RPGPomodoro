@@ -9,9 +9,11 @@ export class InicialComponent implements OnInit {
 
   constructor(){}
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
 
-  entrar(){
+  }
+
+  estudar(){
     alert("entrou");
   }
 

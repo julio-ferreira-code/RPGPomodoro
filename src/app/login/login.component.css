@@ -1,0 +1,29 @@
+.imgEmail{
+  width: 40px;
+  height: 30px;
+}
+
+.imgPW{
+  margin-right: 5px;
+  width: 30px;
+  height: 30px;
+  }
+
+.campoEmail {
+  margin-top: 10px;
+  margin-left: 55px;
+  display: flex;
+}
+
+.campoSenha {
+  margin-left: 60px;
+  display: flex;
+}
+
+.bntEntrar{
+  margin-left: 195px;
+}
+
+.txtLogin{
+  margin-left: 450px;
+}

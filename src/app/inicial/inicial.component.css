@@ -1,0 +1,7 @@
+#blackWarrior{
+	position: fixed;
+	width: 20%;
+	height: 40%;
+	background: #ffffff url('/assets/imagens/blackWarrior.gif') no-repeat center;
+	z-index: 999;
+}
