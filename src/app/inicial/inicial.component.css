@@ -2,6 +2,17 @@
 	position: fixed;
 	width: 20%;
 	height: 40%;
-	background: #ffffff url('/assets/imagens/blackWarrior.gif') no-repeat center;
 	z-index: 999;
+}
+
+.blackWarrior{
+  background: url('/assets/imagens/blackWarrior.gif') no-repeat center;
+}
+
+.whiteWarrior{
+  background: url('/assets/imagens/whiteWarrior.gif') no-repeat center;
+}
+
+.archAngel{
+  background: url('/assets/imagens/archAngel.gif') no-repeat center;
 }
