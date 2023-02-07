@@ -1,1 +1,100 @@
-<p>cadastro works!</p>
+<form [formGroup]="cadastro" (ngSubimit)="cadastrar()">
+  <mat-card>
+    <mat-grid-list cols="3" rowHeight="30:3">
+      <mat-grid-tile>
+        <h3>Nome</h3>
+      </mat-grid-tile>
+      <mat-grid-tile>
+        <h3>Email</h3>
+      </mat-grid-tile>
+      <mat-grid-tile>
+        <h3>Senha</h3>
+      </mat-grid-tile>
+    </mat-grid-list>
+    <mat-grid-list cols="3" rowHeight="30:3">
+      <mat-grid-tile>
+        <mat-form-field appearance="fill">
+          <mat-label>Nome</mat-label>
+          <input
+            matInput
+            formControlName="nome"
+            type="text"
+          />
+        </mat-form-field>
+      </mat-grid-tile>
+      <mat-grid-tile>
+        <mat-form-field appearance="fill">
+          <mat-label>Email</mat-label>
+          <input
+            matInput
+            formControlName="email"
+            type="email"
+          />
+        </mat-form-field>
+      </mat-grid-tile>
+      <mat-grid-tile>
+        <mat-form-field appearance="fill">
+          <mat-label>Senha</mat-label>
+          <input
+            matInput
+            formControlName="senha"
+            type="password"
+          />
+        </mat-form-field>
+      </mat-grid-tile>
+    </mat-grid-list>
+  </mat-card>
+  <mat-divider></mat-divider>
+  <mat-card>
+    <mat-grid-list cols="1" rowHeight="38:1">
+      <mat-grid-tile>
+        <mat-card-header>
+          <mat-card-title>
+            <h2>
+              Selecione o seu Guerreiro
+            </h2>
+          </mat-card-title></mat-card-header>
+      </mat-grid-tile>
+    </mat-grid-list>
+  </mat-card>
+  <mat-card>
+    <mat-grid-list cols="1" rowHeight="38:1">
+      <mat-grid-tile>
+        <mat-card-header>
+          <mat-card-title>
+            <h2>{{nomeHeroi}}</h2>
+          </mat-card-title>
+        </mat-card-header>
+      </mat-grid-tile>
+    </mat-grid-list>
+    <mat-divider></mat-divider>
+    <mat-grid-list cols="1" rowHeight="30:1">
+      <mat-grid-tile>
+        <mat-card-header>
+          <mat-card-title>
+            <h3>{{racaHeroi}}</h3>
+          </mat-card-title>
+        </mat-card-header>
+      </mat-grid-tile>
+    </mat-grid-list>
+    <mat-grid-list cols="3" rowHeight="5:3">
+      <mat-grid-tile>
+        <button class="bntVoltar" mat-raised-button (click)="voltar()">Voltar</button>
+      </mat-grid-tile>
+      <mat-grid-tile>
+        <div ngClass="{{classSelecionada}}" id="blackWarrior"></div>
+      </mat-grid-tile>
+      <mat-grid-tile>
+        <button class="bntAvancar" mat-raised-button (click)="avancar()">Avançar</button>
+      </mat-grid-tile>
+    </mat-grid-list>
+    <mat-divider></mat-divider>
+    <mat-grid-list cols="1" rowHeight="26:1">
+      <mat-grid-tile>
+        <button class="bntCadastrar" mat-raised-button color="primary" (click)="cadastrar()">
+          Cadastrar
+        </button>
+      </mat-grid-tile>
+    </mat-grid-list>
+  </mat-card>
+</form>

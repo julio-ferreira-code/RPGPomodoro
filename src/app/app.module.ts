@@ -7,6 +7,7 @@ import { MatDividerModule } from '@angular/material/divider';
 import { MatFormFieldModule}  from '@angular/material/form-field';
 import { MatCardModule } from '@angular/material/card';
 import { MatGridListModule } from '@angular/material/grid-list';
+import { HttpClientModule } from '@angular/common/http';
 import { AppComponent } from './app.component';
 import { InicialComponent } from './inicial/inicial.component'
 import { TecnicaComponent } from './tecnica/tecnica.component';
@@ -15,6 +16,8 @@ import { LoginComponent } from './login/login.component';
 import { AppRoutingModule } from './app-routing/app-rounting.module';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { CadastroComponent } from './cadastro/cadastro.component';
+import { baseURL } from './shared/baseURL';
+import { UsuarioService } from './services/usuario.service';
 
 @NgModule({
   declarations: [
@@ -36,9 +39,12 @@ import { CadastroComponent } from './cadastro/cadastro.component';
     MatDividerModule,
     MatFormFieldModule,
     MatCardModule,
-    MatGridListModule
+    MatGridListModule,
+    HttpClientModule
   ],
-  providers: [],
+  providers: [
+    UsuarioService,
+    { provide: 'baseURL', useValue: baseURL }],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

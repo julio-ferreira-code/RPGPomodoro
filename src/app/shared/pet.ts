@@ -1,4 +1,5 @@
 export class Pet {
+  id!: number;
   nome!: string;
   pontosExp!: number;
   raca!: string;

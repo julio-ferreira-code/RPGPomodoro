@@ -16,26 +16,29 @@ export class InicialComponent implements OnInit {
   ngOnInit(): void {
     this.listaHerois = [
       {
-        nome: 'Guerreiro',
+        id: 0,
+        nome: 'Guerreiro Negro',
         poder: 0,
         pontosExp: 0,
         raca: 'Humano',
         imagem: 'blackWarrior',
       },
       {
-        nome: 'Guerreiro 2',
+        id: 1,
+        nome: 'Guerreiro Branco',
         poder: 0,
         pontosExp: 0,
         raca: 'Humano',
         imagem: 'whiteWarrior',
       },
       {
-        nome: 'Guerreiro 3',
+        id: 2,
+        nome: 'Arcanjo',
         poder: 0,
         pontosExp: 0,
         raca: 'Humano',
         imagem: 'archAngel',
-      },
+      }
     ];
 
     this.getPosicaoArray(0);
@@ -43,22 +46,6 @@ export class InicialComponent implements OnInit {
 
   getPosicaoArray(posicao: number) {
     this.classSelecionada = this.listaHerois[posicao].imagem;
-  }
-
-  avancar() {
-    this.posicaoSelecionada + 2 > this.listaHerois.length
-      ? (this.posicaoSelecionada = 0)
-      : this.posicaoSelecionada++;
-      this.getPosicaoArray(this.posicaoSelecionada);
-  }
-
-  voltar() {
-
-    this.posicaoSelecionada - 1 < 0
-      ? (this.posicaoSelecionada = this.listaHerois.length-1)
-      : this.posicaoSelecionada--;
-      this.getPosicaoArray(this.posicaoSelecionada);
-
   }
 
   estudar() {

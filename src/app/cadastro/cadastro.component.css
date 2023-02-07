@@ -1,0 +1,30 @@
+#blackWarrior{
+	position: relative;
+	width: 100%;
+	height: 100%;
+	z-index: 999;
+}
+
+.blackWarrior{
+  background: url('/assets/imagens/blackWarrior.gif') no-repeat center;
+}
+
+.whiteWarrior{
+  background: url('/assets/imagens/whiteWarrior.gif') no-repeat center;
+}
+
+.archAngel{
+  background: url('/assets/imagens/archAngel.gif') no-repeat center;
+}
+
+.bntVoltar{
+  margin-left: 82%;
+}
+
+.bntAvancar{
+  margin-right: 82%;
+}
+
+.bntCadastrar{
+  margin-top: 13px;
+}
