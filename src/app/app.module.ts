@@ -14,6 +14,7 @@ import { RankingComponent } from './ranking/ranking.component';
 import { LoginComponent } from './login/login.component';
 import { AppRoutingModule } from './app-routing/app-rounting.module';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { CadastroComponent } from './cadastro/cadastro.component';
 
 @NgModule({
   declarations: [
@@ -21,7 +22,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     InicialComponent,
     TecnicaComponent,
     RankingComponent,
-    LoginComponent
+    LoginComponent,
+    CadastroComponent
   ],
   imports: [
     BrowserModule,
