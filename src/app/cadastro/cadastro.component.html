@@ -91,7 +91,7 @@
     <mat-divider></mat-divider>
     <mat-grid-list cols="1" rowHeight="26:1">
       <mat-grid-tile>
-        <button class="bntCadastrar" mat-raised-button color="primary" (click)="cadastrar()">
+        <button class="bntCadastrar" mat-raised-button color="primary" (click)="cadastrar()" [disabled]="!cadastro.valid">
           Cadastrar
         </button>
       </mat-grid-tile>

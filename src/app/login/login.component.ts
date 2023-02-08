@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { Usuario } from '../shared/usuario';
+import { UsuarioService } from '../services/usuario.service';
 
 @Component({
   selector: 'app-login',
@@ -15,22 +16,23 @@ export class LoginComponent implements OnInit{
   errMess!: string;
   loginForm!: FormGroup;
 
-  constructor (private router: Router,private fb: FormBuilder,){
+  constructor (private router: Router,private fb: FormBuilder,private usuarioService: UsuarioService){
 
   }
 
   ngOnInit(): void {
+    this.usuarioService.getUsuarios().subscribe(
+      (usuarios) => (this.usuarios = usuarios),
+      (errmess) => (this.errMess = <any>errmess)
 
+    );
+    this.createForm();
   }
 
   createForm() {
     this.loginForm = this.fb.group({
-      id: '',
-      nome: '',
-      email: ['', Validators.required],
-      senha: ['', Validators.required],
-      sexo: [''],
-      pet: [''],
+      email: ['', [Validators.email,Validators.required]],
+      senha: ['', Validators.required]
     });
   }
 
@@ -43,12 +45,8 @@ export class LoginComponent implements OnInit{
         this.logUsuario.email == this.usuarios[index].email &&
         this.logUsuario.senha == this.usuarios[index].senha
       ) {
-        //this.controlaLoginService.setUsuarioLogado(this.users[index]);
-        //this.controlaLoginService.toggleSidebarVisibility();
-        //this.router.navigate(["login"]);
-        alert("Logou");
-      }else{
-        alert("Não logou");
+        this.usuarioService.setUsuarioLogado(this.usuarios[index]);
+        this.router.navigate(["inicial"]);
       }
     }
   }

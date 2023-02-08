@@ -14,7 +14,13 @@ export class TecnicaComponent implements OnInit{
   contagemDescanso : number = 0;
   intervalo: any;
   tempos!: FormGroup;
-  constructor(private fb: FormBuilder){}
+
+  constructor(private fb: FormBuilder){
+    this.tempos = this.fb.group({
+      tempoEstudo: [''],
+      tempoDescanso: ['']
+    });
+  }
 
   ngOnInit(): void {
     this.tempos = this.fb.group({
@@ -26,8 +32,10 @@ export class TecnicaComponent implements OnInit{
   iniciar(){
     this.tempoEstudo = this.tempos.get("tempoEstudo")?.value*1000;
     this.tempoDescanso = this.tempos.get("tempoDescanso")?.value*1000;
+    if((this.tempoEstudo && this.tempoDescanso) > 0){
     this.contagemEstudo = 0;
     this.contagemDescanso = 0;
+
     this.intervalo = setInterval(()=> {
       this.contagemEstudo++
        },1000)
@@ -35,6 +43,9 @@ export class TecnicaComponent implements OnInit{
         clearInterval(this.intervalo);
         this.pausa();
           }, this.tempoEstudo);
+        }else{
+          alert("Valor de tempo inválido")
+        }
   }
 
   pausa(){

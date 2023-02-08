@@ -12,6 +12,9 @@ import { baseURL } from '../shared/baseURL';
   providedIn: 'root',
 })
 export class UsuarioService {
+
+  usuarioLogado!: Usuario;
+
   constructor(
     private http: HttpClient,
     private processHTTPMsg: ProcessHTTPMsgService
@@ -42,13 +45,22 @@ export class UsuarioService {
       .pipe(catchError((error) => error));
   }
 
-  putUsuario(usuario: Usuario): Observable<Usuario>{
+  postUsuario(usuario: Usuario): Observable<Usuario>{
     const httpOpttions = {
       headers: new HttpHeaders({
         'Content-Type': 'application/json'
       })
     };
-    return this.http.put<Usuario>(baseURL + 'usuarios/' +  usuario.id, Usuario, httpOpttions)
+    return this.http.post<Usuario>(baseURL + 'usuarios/', usuario, httpOpttions)
       .pipe(catchError(this.processHTTPMsg.handleError));
   }
+
+  setUsuarioLogado(usuario: Usuario){
+    this.usuarioLogado = usuario;
+  }
+
+  getUsuarioLogado():Usuario{
+    return this.usuarioLogado;
+  }
+
 }

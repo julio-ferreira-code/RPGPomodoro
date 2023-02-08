@@ -1,13 +1,11 @@
 <mat-card>
-    <mat-grid-list cols="1" rowHeight="40:1">
+    <mat-grid-list cols="1" rowHeight="30:1">
       <mat-grid-tile>
         <mat-card-header>
-          <mat-card-title
-            ><h1>
-              Nome do usuario
-            </h1></mat-card-title
-          ></mat-card-header
-        >
+          <mat-card-title>
+            <h1>Usuário: {{nomeUsuario}}</h1>
+            </mat-card-title
+          ></mat-card-header>
       </mat-grid-tile>
     </mat-grid-list>
 </mat-card>
@@ -17,28 +15,34 @@
     <mat-grid-tile>
       <mat-card-header>
         <mat-card-title>
-          <h1>Nome do pet</h1>
+          <h1>Nome do Herói: {{nomeHeroi}}</h1>
         </mat-card-title>
       </mat-card-header>
     </mat-grid-tile>
   </mat-grid-list>
   <mat-divider></mat-divider>
-  <mat-grid-list cols="1" rowHeight="30:1">
+  <mat-grid-list cols="1" rowHeight="35:1">
     <mat-grid-tile>
       <mat-card-header>
         <mat-card-title>
-          <h2>raça do pet</h2>
+          <h2> Raça do Herói: {{racaHeroi}}</h2>
+        </mat-card-title>
+      </mat-card-header>
+    </mat-grid-tile>
+  </mat-grid-list>
+  <mat-divider></mat-divider>
+  <mat-grid-list cols="1" rowHeight="32:1">
+    <mat-grid-tile>
+      <mat-card-header>
+        <mat-card-title>
+          <h2>Nível de Poder: {{poderHeroi}}</h2>
         </mat-card-title>
       </mat-card-header>
     </mat-grid-tile>
   </mat-grid-list>
   <mat-grid-list cols="1" rowHeight="5:1">
     <mat-grid-tile>
-
-
-      <div ngClass="{{classSelecionada}}" id="blackWarrior"></div>
-
-
+      <div ngClass="{{heroi}}" id="blackWarrior"></div>
     </mat-grid-tile>
   </mat-grid-list>
   <mat-divider></mat-divider>

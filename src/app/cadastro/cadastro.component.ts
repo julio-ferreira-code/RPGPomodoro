@@ -1,9 +1,10 @@
 import { Usuario } from './../shared/usuario';
 import { UsuarioService } from './../services/usuario.service';
-import { FormBuilder, FormGroup } from '@angular/forms';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Component, Inject, OnInit } from '@angular/core';
 import { Pet } from '../shared/pet';
 import { HttpClient } from '@angular/common/http';
+import { Router, RouterLink } from '@angular/router';
 
 @Component({
   selector: 'app-cadastro',
@@ -21,7 +22,7 @@ export class CadastroComponent implements OnInit {
   errMess!: string;
   usuario!:Usuario;
 
-  constructor(private fb: FormBuilder, @Inject('baseURL') public baseURL:HttpClient, public usuarioService:UsuarioService) {}
+  constructor(private fb: FormBuilder, @Inject('baseURL') public baseURL:HttpClient, private router: Router, public usuarioService:UsuarioService) {}
   ngOnInit(): void {
     this.listaHerois = [
       {
@@ -52,9 +53,9 @@ export class CadastroComponent implements OnInit {
 
     this.getPosicaoArray(0);
     this.cadastro = this.fb.group({
-      nome: [''],
-      email:[''],
-      senha:[''],
+      nome: ['',Validators.required],
+      email:['', [Validators.email,Validators.required]],
+      senha:['', Validators.required],
       pet:[]
     });
   }
@@ -84,20 +85,32 @@ export class CadastroComponent implements OnInit {
 
   cadastrar() {
     this.usuario = this.cadastro.value;
+    if(this.validaUsuario(this.usuario)){
     this.usuario.pet = this.getPosicaoArray(this.posicaoSelecionada);
-    this.usuarioService.putUsuario(this.usuario)
+    this.usuarioService.postUsuario(this.usuario)
       .subscribe(usuario => {
         this.usuario = usuario;
+        confirm("Cadastrado com sucesso!");
+        this.router.navigate(["login"]);
       },
         errmess => { this.usuario = <any>null; this.errMess = <any>errmess;});
-    //this.commentFormDirective.resetForm();
     this.cadastro.reset({
       nome: '',
       email: '',
       senha: '',
       pet: []
     });
-    //this.commentFormDirective.resetForm();
+  }else{
+    alert("Dados inválidos");
+  }
+  }
+
+  validaUsuario(usuario: Usuario): boolean{
+    console.log(usuario.email + ' ' + usuario.senha + ' ' + usuario.nome)
+    if((usuario.email && usuario.senha && usuario.nome) != ''){
+      return true;
+    }
+    return false;
   }
 
 }

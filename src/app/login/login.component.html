@@ -1,19 +1,24 @@
-<div class="container" fxLayout="column" fxLayoutGap="10px">
-    <div class="txtLogin">
-      <h3>Login</h3>
-    </div>
-  <form novalidate [formGroup] = "loginForm" (ngSubmit)="validar()">
+<div class="titulo">
+  <h1>Pomodoro RPG</h1>
+</div>
+<div class="container center" fxLayout="column" fxLayoutGap="10px">
+  <form [formGroup] = "loginForm" (ngSubmit)="validar()">
     <div class="campoEmail">
       <img class="imgEmail" matListAvatar src='assets\imagens\emailicon.png'>
-      <input matInput formControlName="email" type="email" placeholder="abc@mail..." autofocus required>
+      <mat-form-field appearance="fill">
+      <input matInput formControlName="email" type="email" placeholder="abc@mail..." autofocus>
+    </mat-form-field>
     </div>
     <br>
     <div class="campoSenha">
       <img class="imgPW" matListAvatar src='assets\imagens\senhaicon.jpg'>
-      <input matInput formControlName="senha" type="password" placeholder="******" required>
+    <mat-form-field appearance="fill">
+      <input matInput formControlName="senha" type="password" placeholder="******">
+    </mat-form-field>
     </div>
     <br>
     <div>
+      <button class="bntEntrar" mat-raised-button color="secundary" [routerLink]="'/cadastro'">Cadastrar-se</button>
       <button type="submit" class="bntEntrar" mat-raised-button color="primary" [disabled]="!loginForm.valid">Entrar</button>
     </div>
   </form>

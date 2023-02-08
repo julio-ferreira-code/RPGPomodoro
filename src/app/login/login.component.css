@@ -1,29 +1,34 @@
 .imgEmail{
   width: 40px;
   height: 30px;
+  margin-right: 5px;
 }
 
 .imgPW{
-  margin-right: 5px;
   width: 30px;
   height: 30px;
+  margin-right: 10px;
   }
 
 .campoEmail {
   margin-top: 10px;
-  margin-left: 55px;
+  margin-left: 50px;
   display: flex;
 }
 
 .campoSenha {
-  margin-left: 60px;
+  margin-left: 55px;
   display: flex;
 }
 
 .bntEntrar{
-  margin-left: 195px;
+  margin-left: 58px;
 }
 
-.txtLogin{
-  margin-left: 450px;
+.titulo{
+  text-align: center;
+}
+
+.center{
+  margin-left: 35%;
 }
