@@ -1,0 +1,74 @@
+{
+  "usuarios": [
+    {
+      "nome": "Júlio Ferreira",
+      "email": "gn@mail.com",
+      "senha": "123",
+      "pet": {
+        "id": 0,
+        "nome": "Guerreiro Negro",
+        "poder": 16000.21,
+        "pontosExp": 0,
+        "raca": "Humano",
+        "imagem": "blackWarrior"
+      },
+      "id": 1
+    },
+    {
+      "nome": "julio",
+      "email": "gb@mail.com",
+      "senha": "123",
+      "pet": {
+        "id": 1,
+        "nome": "Guerreiro Branco",
+        "poder": 10000.21,
+        "pontosExp": 0,
+        "raca": "Humano",
+        "imagem": "whiteWarrior"
+      },
+      "id": 2
+    },
+    {
+      "nome": "julio",
+      "email": "ar@mail.com",
+      "senha": "123",
+      "pet": {
+        "id": 2,
+        "nome": "Arcanjo",
+        "poder": 7000.55,
+        "pontosExp": 0,
+        "raca": "Anjo",
+        "imagem": "archAngel"
+      },
+      "id": 4
+    },
+    {
+      "nome": "teste",
+      "email": "teste@mail.com",
+      "senha": "123",
+      "pet": {
+        "id": 0,
+        "nome": "Guerreiro Negro",
+        "poder": 0,
+        "pontosExp": 0,
+        "raca": "Humano",
+        "imagem": "blackWarrior"
+      },
+      "id": 9
+    },
+    {
+      "nome": "teste",
+      "email": "user@mail.com",
+      "senha": "123",
+      "pet": {
+        "id": 0,
+        "nome": "Guerreiro Negro",
+        "poder": 0,
+        "pontosExp": 0,
+        "raca": "Humano",
+        "imagem": "blackWarrior"
+      },
+      "id": 10
+    }
+  ]
+}
