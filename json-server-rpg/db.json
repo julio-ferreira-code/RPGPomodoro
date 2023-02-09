@@ -69,6 +69,20 @@
         "imagem": "blackWarrior"
       },
       "id": 10
+    },
+    {
+      "nome": "julio",
+      "email": "abc@mail.com",
+      "senha": "123",
+      "pet": {
+        "id": 0,
+        "nome": "Guerreiro Negro",
+        "poder": 0,
+        "pontosExp": 0,
+        "raca": "Humano",
+        "imagem": "blackWarrior"
+      },
+      "id": 11
     }
   ]
 }

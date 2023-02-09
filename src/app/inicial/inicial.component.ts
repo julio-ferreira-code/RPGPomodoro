@@ -1,5 +1,6 @@
-import { UsuarioService } from './../services/usuario.service';
 import { Component, OnInit } from '@angular/core';
+import { Location } from '@angular/common';
+import { UsuarioService } from './../services/usuario.service';
 import { Usuario } from '../shared/usuario';
 import { Router } from '@angular/router';
 
@@ -16,7 +17,10 @@ export class InicialComponent implements OnInit {
   nomeUsuario!: string;
   usuarioLogado!: Usuario;
 
-  constructor(private usuarioService: UsuarioService, private router: Router) {}
+  constructor(
+    private usuarioService: UsuarioService,
+    private router: Router,
+    private location: Location) {}
 
   ngOnInit(): void {
     this.usuarioLogado = this.usuarioService.getUsuarioLogado();
@@ -33,5 +37,9 @@ export class InicialComponent implements OnInit {
 
   estudar() {
     this.router.navigate(["tecnica"]);
+  }
+
+  voltar(){
+    this.location.back();
   }
 }

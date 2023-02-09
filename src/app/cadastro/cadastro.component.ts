@@ -2,9 +2,10 @@ import { Usuario } from './../shared/usuario';
 import { UsuarioService } from './../services/usuario.service';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Component, Inject, OnInit } from '@angular/core';
-import { Pet } from '../shared/pet';
 import { HttpClient } from '@angular/common/http';
-import { Router, RouterLink } from '@angular/router';
+import { Router } from '@angular/router';
+import { Location } from '@angular/common';
+import { Pet } from '../shared/pet';
 
 @Component({
   selector: 'app-cadastro',
@@ -22,7 +23,11 @@ export class CadastroComponent implements OnInit {
   errMess!: string;
   usuario!:Usuario;
 
-  constructor(private fb: FormBuilder, @Inject('baseURL') public baseURL:HttpClient, private router: Router, public usuarioService:UsuarioService) {}
+  constructor(private fb: FormBuilder,
+  @Inject('baseURL') public baseURL:HttpClient,
+   private router: Router,
+   public usuarioService:UsuarioService,
+   private location: Location) {}
   ngOnInit(): void {
     this.listaHerois = [
       {
@@ -91,7 +96,7 @@ export class CadastroComponent implements OnInit {
       .subscribe(usuario => {
         this.usuario = usuario;
         confirm("Cadastrado com sucesso!");
-        this.router.navigate(["login"]);
+        this.location.back();
       },
         errmess => { this.usuario = <any>null; this.errMess = <any>errmess;});
     this.cadastro.reset({
@@ -111,6 +116,10 @@ export class CadastroComponent implements OnInit {
       return true;
     }
     return false;
+  }
+
+  cancelar(){
+    this.location.back();
   }
 
 }

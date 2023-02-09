@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
+import { Location } from '@angular/common';
+import { AudioService } from './../services/audio.service';
 
 @Component({
   selector: 'app-tecnica',
@@ -13,23 +15,32 @@ export class TecnicaComponent implements OnInit{
   contagemEstudo : number = 0;
   contagemDescanso : number = 0;
   intervalo: any;
+  tempoAlarme: any;
   tempos!: FormGroup;
+  estudando!: boolean;
+  descansando!: boolean;
+  alarme!: boolean;
+  alarme2!: boolean;
 
-  constructor(private fb: FormBuilder){
-    this.tempos = this.fb.group({
-      tempoEstudo: [''],
-      tempoDescanso: ['']
-    });
-  }
+  constructor(
+    private fb: FormBuilder,
+    private location: Location,
+    private audioService: AudioService
+    ){}
 
   ngOnInit(): void {
     this.tempos = this.fb.group({
       tempoEstudo: [''],
       tempoDescanso: ['']
     });
+    this.estudando = false;
+    this.descansando = false;
+    this.alarme = false;
+    this.alarme2 = false;
   }
 
   iniciar(){
+    this.estudando = true;
     this.tempoEstudo = this.tempos.get("tempoEstudo")?.value*1000;
     this.tempoDescanso = this.tempos.get("tempoDescanso")?.value*1000;
     if((this.tempoEstudo && this.tempoDescanso) > 0){
@@ -40,8 +51,13 @@ export class TecnicaComponent implements OnInit{
       this.contagemEstudo++
        },1000)
        setTimeout(() => {
+        this.estudando = false;
+        this.descansando = true;
+        this.alarme = true;
         clearInterval(this.intervalo);
         this.pausa();
+        this.alarmar();
+        this.audioService.playAudio();
           }, this.tempoEstudo);
         }else{
           alert("Valor de tempo inválido")
@@ -53,8 +69,25 @@ export class TecnicaComponent implements OnInit{
       this.contagemDescanso++
        },1000)
        setTimeout(() => {
+        this.descansando = false;
+        this.alarmar();
+        this.alarme2 = true;
         clearInterval(this.intervalo);
           }, this.tempoDescanso);
+  }
+
+  alarmar(){
+    this.tempoAlarme = setInterval(()=> {
+       },1000)
+       setTimeout(() => {
+        this.alarme = false;
+        this.alarme2 = false;
+        clearInterval(this.tempoAlarme);
+          }, 2000);
+  }
+
+  voltar(){
+    this.location.back();
   }
 
 }

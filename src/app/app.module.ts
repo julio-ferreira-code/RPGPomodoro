@@ -1,3 +1,4 @@
+import { AudioService } from './services/audio.service';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
@@ -44,6 +45,7 @@ import { UsuarioService } from './services/usuario.service';
   ],
   providers: [
     UsuarioService,
+    AudioService,
     { provide: 'baseURL', useValue: baseURL }],
   bootstrap: [AppComponent]
 })

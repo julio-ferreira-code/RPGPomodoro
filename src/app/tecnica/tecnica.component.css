@@ -1,0 +1,39 @@
+#timing{
+	position: relative;
+	width: 100%;
+  height: 100%;
+	z-index: 999;
+  background: url('/assets/imagens/timing.gif') no-repeat center;
+  background-size: 50%;
+  margin-bottom: 20px;
+}
+
+#alarm{
+	position: relative;
+	width: 100%;
+  height: 100%;
+	z-index: 999;
+  background: url('/assets/imagens/alarm.gif') no-repeat center;
+  background-size: 50%;
+  margin-bottom: 20px;
+}
+
+#estudando{
+	position: relative;
+	width: 100%;
+  height: 100%;
+	z-index: 999;
+  background: url('/assets/imagens/estudando.gif') no-repeat center;
+  background-size: 50%;
+  margin-bottom: 20px;
+}
+
+#descansando{
+	position: relative;
+	width: 100%;
+  height: 100%;
+	z-index: 999;
+  background: url('/assets/imagens/descansando.gif') no-repeat center;
+  background-size: 50%;
+  margin-bottom: 20px;
+}

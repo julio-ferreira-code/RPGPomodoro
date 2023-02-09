@@ -1,6 +1,6 @@
 <form [formGroup]="cadastro" (ngSubimit)="cadastrar()">
   <mat-card>
-    <mat-grid-list cols="3" rowHeight="30:3">
+    <mat-grid-list cols="3" rowHeight="40:3">
       <mat-grid-tile>
         <h3>Nome</h3>
       </mat-grid-tile>
@@ -58,7 +58,7 @@
     </mat-grid-list>
   </mat-card>
   <mat-card>
-    <mat-grid-list cols="1" rowHeight="38:1">
+    <mat-grid-list cols="1" rowHeight="40:1">
       <mat-grid-tile>
         <mat-card-header>
           <mat-card-title>
@@ -89,11 +89,16 @@
       </mat-grid-tile>
     </mat-grid-list>
     <mat-divider></mat-divider>
-    <mat-grid-list cols="1" rowHeight="26:1">
+    <mat-grid-list cols="2" rowHeight="26:2">
       <mat-grid-tile>
-        <button class="bntCadastrar" mat-raised-button color="primary" (click)="cadastrar()" [disabled]="!cadastro.valid">
-          Cadastrar
-        </button>
+          <button class="bntCadastrar" mat-raised-button color="warn" (click)="cancelar()">
+            Cancelar
+          </button>
+        </mat-grid-tile>
+          <mat-grid-tile>
+          <button class="bntCadastrar" mat-raised-button color="primary" (click)="cadastrar()" [disabled]="!cadastro.valid">
+            Cadastrar
+          </button>
       </mat-grid-tile>
     </mat-grid-list>
   </mat-card>
