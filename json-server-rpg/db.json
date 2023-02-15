@@ -8,7 +8,7 @@
         "id": 0,
         "nome": "Guerreiro Negro",
         "poder": 16000.21,
-        "pontosExp": 0,
+        "pontosExp": 340000,
         "raca": "Humano",
         "imagem": "blackWarrior"
       },
@@ -22,7 +22,7 @@
         "id": 1,
         "nome": "Guerreiro Branco",
         "poder": 10000.21,
-        "pontosExp": 0,
+        "pontosExp": 100000,
         "raca": "Humano",
         "imagem": "whiteWarrior"
       },
@@ -36,7 +36,7 @@
         "id": 2,
         "nome": "Arcanjo",
         "poder": 7000.55,
-        "pontosExp": 0,
+        "pontosExp": 150000,
         "raca": "Anjo",
         "imagem": "archAngel"
       },
@@ -49,8 +49,8 @@
       "pet": {
         "id": 0,
         "nome": "Guerreiro Negro",
-        "poder": 0,
-        "pontosExp": 0,
+        "poder": 18000,
+        "pontosExp": 400000,
         "raca": "Humano",
         "imagem": "blackWarrior"
       },
@@ -63,8 +63,8 @@
       "pet": {
         "id": 0,
         "nome": "Guerreiro Negro",
-        "poder": 0,
-        "pontosExp": 0,
+        "poder": 12000,
+        "pontosExp": 300000,
         "raca": "Humano",
         "imagem": "blackWarrior"
       },
@@ -77,8 +77,8 @@
       "pet": {
         "id": 0,
         "nome": "Guerreiro Negro",
-        "poder": 0,
-        "pontosExp": 0,
+        "poder": 15000,
+        "pontosExp": 320000,
         "raca": "Humano",
         "imagem": "blackWarrior"
       },

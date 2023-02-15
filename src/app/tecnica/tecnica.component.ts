@@ -1,7 +1,9 @@
+import { UsuarioService } from './../services/usuario.service';
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
 import { Location } from '@angular/common';
 import { AudioService } from './../services/audio.service';
+import { Usuario } from '../shared/usuario';
 
 @Component({
   selector: 'app-tecnica',
@@ -10,6 +12,7 @@ import { AudioService } from './../services/audio.service';
 })
 export class TecnicaComponent implements OnInit{
 
+  usuario!: Usuario;
   tempoEstudo! : number;
   tempoDescanso! : number;
   contagemEstudo : number = 0;
@@ -25,7 +28,8 @@ export class TecnicaComponent implements OnInit{
   constructor(
     private fb: FormBuilder,
     private location: Location,
-    private audioService: AudioService
+    private audioService: AudioService,
+    private usuarioService: UsuarioService
     ){}
 
   ngOnInit(): void {
@@ -72,6 +76,7 @@ export class TecnicaComponent implements OnInit{
         this.descansando = false;
         this.alarmar();
         this.alarme2 = true;
+        this.pontuar();
         clearInterval(this.intervalo);
           }, this.tempoDescanso);
   }
@@ -84,6 +89,11 @@ export class TecnicaComponent implements OnInit{
         this.alarme2 = false;
         clearInterval(this.tempoAlarme);
           }, 2000);
+  }
+
+  pontuar(){
+    this.usuario = this.usuarioService.getUsuarioLogado();
+    console.log(this.usuario);
   }
 
   voltar(){

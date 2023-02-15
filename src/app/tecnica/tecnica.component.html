@@ -36,7 +36,7 @@
     <mat-divider></mat-divider>
     <mat-grid-list cols="1" rowHeight="26:1">
       <mat-grid-tile>
-        <button mat-raised-button color="primary" (click)="iniciar()">
+        <button mat-raised-button color="primary" (click)="iniciar()" [disabled]="estudando || descansando">
           Iniciar
         </button>
       </mat-grid-tile>

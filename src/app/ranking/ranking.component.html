@@ -1,1 +1,10 @@
-<p>ranking works!</p>
+<mat-card>
+  <mat-card-title>Ranking</mat-card-title>
+  <mat-divider></mat-divider>
+      <mat-card-content *ngFor="let usuario of usuarios">
+        <li>{{usuario.nome}}</li>
+        <ul>Nome do Heroi: {{usuario.pet.nome}}</ul>
+        <ul>Poder do Heroi: {{usuario.pet.poder}}</ul>
+        <mat-divider></mat-divider>
+      </mat-card-content>
+</mat-card>
