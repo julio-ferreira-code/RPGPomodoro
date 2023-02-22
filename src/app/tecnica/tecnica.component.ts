@@ -92,7 +92,13 @@ export class TecnicaComponent implements OnInit{
   }
 
   pontuar(){
+    console.log("Pontos antes");
+    console.log(this.usuario);
     this.usuario = this.usuarioService.getUsuarioLogado();
+    this.usuario.pet.pontosExp += (9*this.tempoEstudo);
+    this.usuario.pet.poder += (5*this.tempoEstudo);
+    //atualizar usuario aqui. usar metodo put do usuario service
+    console.log("Pontos depois de estudar");
     console.log(this.usuario);
   }
 
