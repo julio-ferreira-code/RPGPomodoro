@@ -1,7 +1,13 @@
 <mat-card>
-  <mat-card-title>Ranking</mat-card-title>
-  <mat-divider></mat-divider>
-      <mat-card-content *ngFor="let usuario of usuarios">
+  <mat-card-title class="center">Ranking
+    <br>
+  </mat-card-title>
+  <div>
+    <button mat-raised-button color="secundary" (click)="voltar()">
+    Voltar
+  </button>
+</div>
+      <mat-card-content class="content" *ngFor="let usuario of usuarios">
         <li>{{usuario.nome}}</li>
         <ul>Nome do Heroi: {{usuario.pet.nome}}</ul>
         <ul>Poder do Heroi: {{usuario.pet.poder}}</ul>

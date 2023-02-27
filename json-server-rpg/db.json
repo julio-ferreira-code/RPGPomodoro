@@ -7,8 +7,8 @@
       "pet": {
         "id": 0,
         "nome": "Guerreiro Negro",
-        "poder": 16000.21,
-        "pontosExp": 340000,
+        "poder": 46000.21,
+        "pontosExp": 394000,
         "raca": "Humano",
         "imagem": "blackWarrior"
       },
@@ -21,8 +21,8 @@
       "pet": {
         "id": 1,
         "nome": "Guerreiro Branco",
-        "poder": 10000.21,
-        "pontosExp": 100000,
+        "poder": 25200.21,
+        "pontosExp": 128000,
         "raca": "Humano",
         "imagem": "whiteWarrior"
       },

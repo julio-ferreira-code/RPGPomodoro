@@ -55,6 +55,16 @@ export class UsuarioService {
       .pipe(catchError(this.processHTTPMsg.handleError));
   }
 
+  putUsuario(usuario: Usuario): Observable<Usuario>{
+    const httpOpttions = {
+      headers: new HttpHeaders({
+        'Content-Type': 'application/json'
+      })
+    };
+    return this.http.put<Usuario>(baseURL + 'usuarios/' +  usuario.id, usuario, httpOpttions)
+      .pipe(catchError(this.processHTTPMsg.handleError));
+  }
+
   setUsuarioLogado(usuario: Usuario){
     this.usuarioLogado = usuario;
   }

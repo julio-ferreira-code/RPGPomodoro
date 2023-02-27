@@ -1,9 +1,10 @@
 import { UsuarioService } from './../services/usuario.service';
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup } from '@angular/forms';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Location } from '@angular/common';
 import { AudioService } from './../services/audio.service';
 import { Usuario } from '../shared/usuario';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-tecnica',
@@ -29,18 +30,24 @@ export class TecnicaComponent implements OnInit{
     private fb: FormBuilder,
     private location: Location,
     private audioService: AudioService,
-    private usuarioService: UsuarioService
-    ){}
+    private usuarioService: UsuarioService,
+    private router: Router
+    ){
+      this.usuario = this.usuarioService.getUsuarioLogado();
+    }
 
   ngOnInit(): void {
     this.tempos = this.fb.group({
-      tempoEstudo: [''],
-      tempoDescanso: ['']
+      tempoEstudo: ['', Validators.required],
+      tempoDescanso: ['', Validators.required]
     });
     this.estudando = false;
     this.descansando = false;
     this.alarme = false;
     this.alarme2 = false;
+    if(this.usuario == null){
+    this.router.navigate([""]);
+    }
   }
 
   iniciar(){
@@ -92,14 +99,9 @@ export class TecnicaComponent implements OnInit{
   }
 
   pontuar(){
-    console.log("Pontos antes");
-    console.log(this.usuario);
-    this.usuario = this.usuarioService.getUsuarioLogado();
-    this.usuario.pet.pontosExp += (9*this.tempoEstudo);
-    this.usuario.pet.poder += (5*this.tempoEstudo);
-    //atualizar usuario aqui. usar metodo put do usuario service
-    console.log("Pontos depois de estudar");
-    console.log(this.usuario);
+    this.usuario.pet.pontosExp += (2.5*this.tempoEstudo);
+    this.usuario.pet.poder += (1.3*this.tempoEstudo);
+    this.usuarioService.putUsuario(this.usuario).subscribe();
   }
 
   voltar(){

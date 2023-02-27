@@ -16,15 +16,22 @@ export class InicialComponent implements OnInit {
   poderHeroi!: number;
   nomeUsuario!: string;
   usuarioLogado!: Usuario;
+  usuario!: Usuario;
 
   constructor(
     private usuarioService: UsuarioService,
     private router: Router,
-    private location: Location) {}
+    private location: Location) {
+      this.usuario = this.usuarioService.getUsuarioLogado();
+    }
 
   ngOnInit(): void {
+    if(this.usuario != null){
     this.usuarioLogado = this.usuarioService.getUsuarioLogado();
     this.getDados();
+    }else{
+      this.router.navigate([""]);
+    }
   }
 
   getDados() {
