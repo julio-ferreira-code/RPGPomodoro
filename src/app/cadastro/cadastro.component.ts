@@ -32,6 +32,7 @@ export class CadastroComponent implements OnInit {
     this.listaHerois = [
       {
         id: 0,
+        level:0,
         nome: 'Guerreiro Negro',
         poder: 0,
         pontosExp: 0,
@@ -40,6 +41,7 @@ export class CadastroComponent implements OnInit {
       },
       {
         id: 1,
+        level:0,
         nome: 'Guerreiro Branco',
         poder: 0,
         pontosExp: 0,
@@ -48,6 +50,7 @@ export class CadastroComponent implements OnInit {
       },
       {
         id: 2,
+        level:0,
         nome: 'Arcanjo',
         poder: 0,
         pontosExp: 0,

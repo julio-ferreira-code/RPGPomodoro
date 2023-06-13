@@ -7,10 +7,11 @@
       "pet": {
         "id": 0,
         "nome": "Guerreiro Negro",
-        "poder": 46000.21,
-        "pontosExp": 394000,
+        "poder": 5202.012976908982,
+        "pontosExp": 486500,
         "raca": "Humano",
-        "imagem": "blackWarrior"
+        "imagem": "blackWarrior",
+        "level": 3.929012822438808
       },
       "id": 1
     },
@@ -21,10 +22,11 @@
       "pet": {
         "id": 1,
         "nome": "Guerreiro Branco",
-        "poder": 25200.21,
-        "pontosExp": 128000,
+        "poder": 39500.21,
+        "pontosExp": 155500,
         "raca": "Humano",
-        "imagem": "whiteWarrior"
+        "imagem": "whiteWarrior",
+        "level": 29.833995468277944
       },
       "id": 2
     },
@@ -35,10 +37,11 @@
       "pet": {
         "id": 2,
         "nome": "Arcanjo",
-        "poder": 7000.55,
-        "pontosExp": 150000,
+        "poder": 8300.55,
+        "pontosExp": 152500,
         "raca": "Anjo",
-        "imagem": "archAngel"
+        "imagem": "archAngel",
+        "level": 6.2692975830815705
       },
       "id": 4
     },
@@ -49,10 +52,11 @@
       "pet": {
         "id": 0,
         "nome": "Guerreiro Negro",
-        "poder": 18000,
-        "pontosExp": 400000,
+        "poder": 19300,
+        "pontosExp": 402500,
         "raca": "Humano",
-        "imagem": "blackWarrior"
+        "imagem": "blackWarrior",
+        "level": 14.577039274924472
       },
       "id": 9
     },
@@ -63,10 +67,11 @@
       "pet": {
         "id": 0,
         "nome": "Guerreiro Negro",
-        "poder": 12000,
-        "pontosExp": 300000,
+        "poder": 13300,
+        "pontosExp": 302500,
         "raca": "Humano",
-        "imagem": "blackWarrior"
+        "imagem": "blackWarrior",
+        "level": 10.045317220543806
       },
       "id": 10
     },
@@ -77,10 +82,11 @@
       "pet": {
         "id": 0,
         "nome": "Guerreiro Negro",
-        "poder": 15000,
-        "pontosExp": 320000,
+        "poder": 16300,
+        "pontosExp": 322500,
         "raca": "Humano",
-        "imagem": "blackWarrior"
+        "imagem": "blackWarrior",
+        "level": 12.311178247734139
       },
       "id": 11
     }

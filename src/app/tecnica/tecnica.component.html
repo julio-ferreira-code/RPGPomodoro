@@ -103,7 +103,7 @@
 </mat-card>
 <mat-grid-list cols="1" rowHeight="20:1">
   <mat-grid-tile>
-    <button mat-raised-button color="basic" (click)="voltar()">
+    <button mat-raised-button color="basic" (click)="voltar()" [disabled]="estudando || descansando">
       Voltar
     </button>
   </mat-grid-tile>

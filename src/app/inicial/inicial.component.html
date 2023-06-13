@@ -36,18 +36,19 @@
     </mat-grid-tile>
   </mat-grid-list>
   <mat-divider></mat-divider>
-  <mat-grid-list cols="1" rowHeight="32:1">
+  <mat-grid-list cols="1" rowHeight="32:2">
     <mat-grid-tile>
       <mat-card-header>
         <mat-card-title>
-          <h2>Nível de Poder: {{poderHeroi}}</h2>
+          <h3>Level: {{level | number: '1.0-0'}}</h3>
+          <h4>Nível de Poder: {{poderHeroi | number: '1.1-2'}}</h4>
         </mat-card-title>
       </mat-card-header>
     </mat-grid-tile>
   </mat-grid-list>
   <mat-grid-list cols="1" rowHeight="5:1">
     <mat-grid-tile>
-      <div ngClass="{{heroi}}" id="blackWarrior"></div>
+      <div ngClass="{{heroi}}" id="modelImg"></div>
     </mat-grid-tile>
   </mat-grid-list>
   <mat-divider></mat-divider>

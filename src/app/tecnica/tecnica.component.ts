@@ -101,6 +101,7 @@ export class TecnicaComponent implements OnInit{
   pontuar(){
     this.usuario.pet.pontosExp += (2.5*this.tempoEstudo);
     this.usuario.pet.poder += (1.3*this.tempoEstudo);
+    this.usuario.pet.level = this.usuario.pet.poder / 1324;
     this.usuarioService.putUsuario(this.usuario).subscribe();
   }
 

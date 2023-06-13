@@ -17,6 +17,7 @@ export class InicialComponent implements OnInit {
   nomeUsuario!: string;
   usuarioLogado!: Usuario;
   usuario!: Usuario;
+  level!:number;
 
   constructor(
     private usuarioService: UsuarioService,
@@ -40,6 +41,7 @@ export class InicialComponent implements OnInit {
     this.racaHeroi = this.usuarioLogado.pet.raca;
     this.poderHeroi = this.usuarioLogado.pet.poder;
     this.nomeUsuario = this.usuarioLogado.nome;
+    this.level = this.poderHeroi / 1324;
   }
 
   estudar() {

@@ -1,5 +1,6 @@
 export class Pet {
   id!: number;
+  level!:number;
   nome!: string;
   pontosExp!: number;
   raca!: string;

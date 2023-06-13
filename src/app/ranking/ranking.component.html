@@ -7,10 +7,11 @@
     Voltar
   </button>
 </div>
-      <mat-card-content class="content" *ngFor="let usuario of usuarios">
-        <li>{{usuario.nome}}</li>
-        <ul>Nome do Heroi: {{usuario.pet.nome}}</ul>
-        <ul>Poder do Heroi: {{usuario.pet.poder}}</ul>
-        <mat-divider></mat-divider>
-      </mat-card-content>
+<mat-card-content class="content" *ngFor="let usuario of usuarios">
+    <li>{{usuario.nome}}</li>
+    <ul>Nome do Heroi: {{usuario.pet.nome}}</ul>
+    <ul>Level: {{usuario.pet.level | number: '1.0-0'}}</ul>
+    <ul>Poder do Heroi: {{usuario.pet.poder | number: '1.1-2'}}</ul>
+    <mat-divider></mat-divider>
+</mat-card-content>
 </mat-card>

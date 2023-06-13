@@ -29,6 +29,12 @@
   text-align: center;
 }
 
-.center{
-  margin-left: 35%;
+
+.container{
+width: 95vw;
+height: 40vh;
+display: flex;
+flex-direction: row;
+justify-content: center;
+align-items: center;
 }
