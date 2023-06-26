@@ -7,11 +7,11 @@
       "pet": {
         "id": 0,
         "nome": "Guerreiro Negro",
-        "poder": 5202.012976908982,
-        "pontosExp": 486500,
+        "poder": 9102.012976908982,
+        "pontosExp": 494000,
         "raca": "Humano",
         "imagem": "blackWarrior",
-        "level": 3.929012822438808
+        "level": 6.87463215778624
       },
       "id": 1
     },
