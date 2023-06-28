@@ -32,7 +32,7 @@ constructor(
 
   listar():Usuario[]{
     this.usuarioservice.getUsuarios().subscribe(
-      (usuarios) => (this.usuarios = usuarios).sort((a,b) => a.pet.poder > b.pet.poder ? -1 : 1)
+      (usuarios) => (this.usuarios = usuarios).sort((a,b) => a.poderPet > b.poderPet ? -1 : 1)
     );
     return this.usuarios;
   }

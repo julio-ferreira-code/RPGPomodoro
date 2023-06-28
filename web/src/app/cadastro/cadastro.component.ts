@@ -56,6 +56,15 @@ export class CadastroComponent implements OnInit {
         pontosExp: 0,
         raca: 'Anjo',
         imagem: 'archAngel',
+      },
+      {
+        id: 3,
+        level:0,
+        nome: 'Necromante',
+        poder: 0,
+        pontosExp: 0,
+        raca: 'Necromante',
+        imagem: 'necromant',
       }
     ];
 
@@ -94,8 +103,8 @@ export class CadastroComponent implements OnInit {
   cadastrar() {
     this.usuario = this.cadastro.value;
     if(this.validaUsuario(this.usuario)){
-    this.usuario.pet = this.getPosicaoArray(this.posicaoSelecionada);
-    this.usuarioService.postUsuario(this.usuario)
+      this.adicionarPetAoUsuario(this.usuario, this.getPosicaoArray(this.posicaoSelecionada));
+      this.usuarioService.postUsuario(this.usuario)
       .subscribe(usuario => {
         this.usuario = usuario;
         confirm("Cadastrado com sucesso!");
@@ -114,11 +123,22 @@ export class CadastroComponent implements OnInit {
   }
 
   validaUsuario(usuario: Usuario): boolean{
-    console.log(usuario.email + ' ' + usuario.senha + ' ' + usuario.nome)
     if((usuario.email && usuario.senha && usuario.nome) != ''){
       return true;
     }
     return false;
+  }
+
+  adicionarPetAoUsuario(usuario: Usuario, pet: Pet):Usuario{
+
+    usuario.nomePet = pet.nome;
+    usuario.imagemPet = pet.imagem;
+    usuario.levelPet = pet.level;
+    usuario.poderPet = pet.poder;
+    usuario.pontosExpPet = pet.pontosExp;
+    usuario.racaPet = pet.raca;
+
+    return usuario;
   }
 
   cancelar(){

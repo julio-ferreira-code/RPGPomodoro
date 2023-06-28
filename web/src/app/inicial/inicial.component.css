@@ -17,6 +17,10 @@
   background: url('/assets/imagens/archAngel.gif') no-repeat center;
 }
 
+.necromant{
+  background: url('/assets/imagens/necromant.gif') no-repeat center;
+}
+
 .centralizaTexto{
   text-align: center;
 }

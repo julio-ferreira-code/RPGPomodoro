@@ -1,7 +1,7 @@
 #modelImg{
-	position: relative;
-	width: 100%;
-	height: 100%;
+	position: absolute;
+	width: 300px;
+	height: 300px;
 	z-index: 999;
 }
 
@@ -15,6 +15,10 @@
 
 .archAngel{
   background: url('/assets/imagens/archAngel.gif') no-repeat center;
+}
+
+.necromant{
+  background: url('/assets/imagens/necromant.gif') no-repeat center;
 }
 
 .bntVoltar{

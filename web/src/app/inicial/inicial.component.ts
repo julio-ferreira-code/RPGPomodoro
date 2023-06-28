@@ -36,12 +36,12 @@ export class InicialComponent implements OnInit {
   }
 
   getDados() {
-    this.heroi = this.usuarioLogado.pet.imagem;
-    this.nomeHeroi = this.usuarioLogado.pet.nome;
-    this.racaHeroi = this.usuarioLogado.pet.raca;
-    this.poderHeroi = this.usuarioLogado.pet.poder;
+    this.heroi = this.usuarioLogado.imagemPet;
+    this.nomeHeroi = this.usuarioLogado.nomePet;
+    this.racaHeroi = this.usuarioLogado.racaPet;
+    this.poderHeroi = this.usuarioLogado.poderPet;
     this.nomeUsuario = this.usuarioLogado.nome;
-    this.level = this.poderHeroi / 1324;
+    this.level = Math.trunc(this.poderHeroi / 1324);
   }
 
   estudar() {
