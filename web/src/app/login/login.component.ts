@@ -15,6 +15,7 @@ export class LoginComponent implements OnInit{
   logUsuario!: Usuario;
   errMess!: string;
   loginForm!: FormGroup;
+  ret!:boolean;
 
   constructor (private router: Router,private fb: FormBuilder,private usuarioService: UsuarioService){
 
@@ -38,6 +39,7 @@ export class LoginComponent implements OnInit{
 
   validar() {
     this.logUsuario = new Usuario();
+    this.ret = false;
     this.logUsuario.email = this.loginForm.get('email')?.value;
     this.logUsuario.senha = this.loginForm.get('senha')?.value;
     for (let index = 0; index < this.usuarios.length; index++) {
@@ -45,9 +47,13 @@ export class LoginComponent implements OnInit{
         this.logUsuario.email == this.usuarios[index].email &&
         this.logUsuario.senha == this.usuarios[index].senha
       ) {
+        this.ret = true;
         this.usuarioService.setUsuarioLogado(this.usuarios[index]);
         this.router.navigate(["inicial"]);
       }
+    }
+    if(!this.ret){
+      alert("Email ou Senha incorreto!");
     }
   }
 
